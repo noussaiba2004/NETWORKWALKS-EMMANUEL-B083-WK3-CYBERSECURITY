@@ -1,42 +1,42 @@
-# Test d'Intrusion : Cassage de Mot de Passe & Extraction de Hash (Semaine 3)
+# Penetration Testing: Password Cracking & Hash Extraction (Week 3)
 
-## 📌 Présentation du Projet
-Ce dépôt contient la documentation des laboratoires pratiques de la Semaine 3 du programme de cybersécurité Networkwalks. L'objectif était de démontrer les vulnérabilités des mots de passe faibles en extrayant des empreintes cryptographiques (hashes) à partir de documents PDF verrouillés et en récupérant les mots de passe en clair via des attaques par dictionnaire.
+## 📌 Project Overview
+This repository contains the documentation for the Week 3 practical labs of the Networkwalks Cybersecurity Program. The objective was to demonstrate the vulnerabilities of weak passwords by extracting cryptographic hashes from locked PDF documents and recovering the plaintext passwords using dictionary attacks.
 
-## 🚀 Modules Complétés
-*   **W3-PM1 (Password Cracking avec JTR) :** Utilisation de l'outil standard John the Ripper (JTR) via l'interface graphique Johnny installée nativement sur Kali Linux.
-*   **W3-PM2 (Password Cracking avec les outils NW) :** Utilisation du calculateur de hash et de l'environnement d'attaque par dictionnaire web de Networkwalks.
+## 🚀 Modules Completed
+*   **W3-PM1 (Password Cracking with JTR):** Utilizing the industry-standard John the Ripper (JTR) via the Johnny graphical interface installed natively on Kali Linux.
+*   **W3-PM2 (Password Cracking with NW Tools):** Utilizing the Networkwalks Hash Calculator and web-based dictionary attack environment.
 
-## 🛠️ Outils & Technologies
-*   **Environnement :** Machine physique Kali Linux.
-*   **Outils Locaux :** Terminal Linux, John the Ripper, interface graphique Johnny.
-*   **Outils Web :** OnlineHashCrack.com, Networkwalks Hash Calculator & Password Cracker.
-*   **Cible :** Fichier protégé `My-Locked-PDF1.pdf`.
+## 🛠️ Tools & Technologies Used
+*   **Environment:** Physical Kali Linux host machine.
+*   **Local Tools:** Linux Terminal, John the Ripper, Johnny GUI.
+*   **Web Tools:** OnlineHashCrack.com, Networkwalks Hash Calculator & Password Cracker.
+*   **Target:** Password-protected file `My-Locked-PDF1.pdf`.
 
-## 📝 Étapes d'Exécution et Méthodologie
+## 📝 Execution Steps & Methodology
 
-### Approche 1 : Cassage Local avec John the Ripper & Johnny GUI (W3-PM1)
-1.  **Extraction du Hash :** Le fichier PDF a été soumis à un outil d'extraction, générant une empreinte compatible avec le format `$pdf$`.
-2.  **Préparation du Fichier :** Création du fichier `hash1.txt` contenant l'empreinte via le terminal.
-3.  **Cassage :** L'interface Johnny a été configurée pour cibler l'exécutable natif de John the Ripper. L'attaque par dictionnaire a testé une liste de mots courants et a révélé le mot de passe en clair : `password1`.
+### Approach 1: Local Cracking with John the Ripper & Johnny GUI (W3-PM1)
+1.  **Hash Extraction:** The locked PDF was submitted to an extraction tool, generating a fingerprint compatible with the `$pdf$` format.
+2.  **File Preparation:** Created the `hash1.txt` file containing the extracted hash via the terminal.
+3.  **Cracking:** The Johnny interface was configured to target the native John the Ripper executable. The dictionary attack tested a list of common words and successfully revealed the plaintext password: `password1`.
 
-### Approche 2 : Cassage Web (W3-PM2)
-1.  **Analyse du Hash :** Importation du PDF dans le calculateur de hash de Networkwalks.
-2.  **Attaque par Dictionnaire :** Soumission du hash dans l'outil Password Cracker. La correspondance a confirmé le mot de passe `password1`.
+### Approach 2: Web-Based Cracking (W3-PM2)
+1.  **Hash Parsing:** Imported the locked PDF into the Networkwalks Hash Calculator.
+2.  **Dictionary Attack:** Submitted the hash to the Password Cracker tool. The dictionary match confirmed the password `password1`.
 
-### 🏁 Capture du Flag
-En utilisant le mot de passe faible récupéré, la protection d'accès du document PDF a pu être contournée avec succès.
+### 🏁 Flag Capture
+Using the recovered weak password, the PDF document's access protection was successfully bypassed.
 
-![Saisie du mot de passe](unlock.png)
+![Entering the password](unlock.png)[cite: 35]
 
-L'ouverture du document a révélé le message de félicitations et le flag caché validant l'exercice.
+Opening the document revealed the congratulatory message and the hidden flag validating the exercise.
 
-![Flag capturé](Done.png)
+![Captured flag](Done.png)[cite: 34]
 
-**Flag capturé :** `nw{networkwalks_flag1_jtr_270521_1}`
+**Captured Flag:** `nw{networkwalks_flag1_jtr_270521_1}`[cite: 34]
 
 ## 📊 Conclusion
-Cet exercice démontre de manière pratique la vulnérabilité critique des mots de passe basés sur le dictionnaire. En tant qu'étudiante en Master de Cryptographie et Sécurité de l'Information, ce laboratoire illustre concrètement que même les normes de chiffrement mathématiques les plus robustes sont instantanément rendues inutiles si le mot de passe sous-jacent (le facteur humain) manque d'entropie et de complexité.
+This exercise practically demonstrates the critical vulnerability of dictionary-based passwords. As a Master's student in Cryptography and Information Security, this lab serves as a concrete illustration that even the most robust mathematical encryption standards are instantly rendered useless if the underlying password (the human factor) lacks entropy and complexity.
 
-## ⚠️ Clause de Non-Responsabilité
-Toutes les activités documentées dans ce projet ont été réalisées strictement à des fins éducatives dans le cadre d'un environnement de laboratoire autorisé et simulé.
+## ⚠️ Legal Disclaimer
+All activities documented in this project were performed strictly for educational purposes within an authorized and simulated lab environment.
